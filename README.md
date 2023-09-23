@@ -13,7 +13,7 @@
 <img src="https://github.com/xiaoxuxiansheng/timewheel/blob/main/img/zset_timewheel.png" height="400px"/>
 
 ## 💡 `原理与实现`技术博客
-<a href="待补充">基于 golang 从零到一实现时间轮算法</a> <br/><br/>
+<a href="https://mp.weixin.qq.com/s?__biz=MzkxMjQzMjA0OQ==&mid=2247484714&idx=1&sn=dc5275ca57e4607bf6373b6cfaf9b552">基于 golang 从零到一实现时间轮算法</a> <br/><br/>
 
 ## 🐧 使用示例
 使用单测示例代码如下. 参见 ./time_wheel_test.go 文件
