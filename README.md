@@ -1,15 +1,16 @@
 # timewheel
 
 <p align="center">
-<img src="https://github.com/xiaoxuxiansheng/gotcc/blob/main/img/sdk_frame.png" height="400px/"><br/><br/>
+<img src="https://github.com/xiaoxuxiansheng/timewheel/blob/main/img/timewheel.png" height="400px/"><br/><br/>
 <b>timewheel: 纯 golang 实现的时间轮框架</b>
 <br/><br/>
 </p>
 
 ## 📖 sdk 核心能力
 - 基于 golang time ticker + 环形数组实现了单机版时间轮工具<br/><br/>
+<img src="https://github.com/xiaoxuxiansheng/timewheel/blob/main/img/local_timewheel.png" height="400px"/>
 - 基于 golang time ticker + redis zset 实现了分布式版时间轮工具<br/><br/>
-<img src="https://github.com/xiaoxuxiansheng/gotcc/blob/main/img/2pc.png" height="400px"/>
+<img src="https://github.com/xiaoxuxiansheng/timewheel/blob/main/img/zset_timewheel.png" height="400px"/>
 
 ## 💡 `原理与实现`技术博客
 <a href="待补充">基于 golang 从零到一实现时间轮算法</a> <br/><br/>
