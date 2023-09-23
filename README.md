@@ -17,7 +17,7 @@
 
 ## 🐧 使用示例
 使用单测示例代码如下. 参见 ./time_wheel_test.go 文件
-- 单机版时间轮<br/><br/>
+- 单机版时间轮
 ```go
 func Test_timeWheel(t *testing.T) {
 	timeWheel := NewTimeWheel(10, 500*time.Millisecond)
