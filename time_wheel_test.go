@@ -2,13 +2,11 @@ package timewheel
 
 import (
 	"context"
-	"net/http"
 	"testing"
 	"time"
 
 	thttp "github.com/xiaoxuxiansheng/timewheel/pkg/http"
 	"github.com/xiaoxuxiansheng/timewheel/pkg/redis"
-	"github.com/xiaoxuxiansheng/timewheel/pkg/util"
 )
 
 func Test_timeWheel(t *testing.T) {
@@ -29,9 +27,18 @@ func Test_timeWheel(t *testing.T) {
 }
 
 const (
+	// redis 服务器信息
 	network  = "tcp"
-	address  = "43.138.61.23:6379"
-	password = "19951212"
+	address  = "请输入 redis 地址"
+	password = "请输入 redis 密码"
+)
+
+var (
+	// 定时任务回调信息
+	callbackURL    = "请输入回调地址"
+	callbackMethod = "POST"
+	callbackReq    interface{}
+	callbackHeader map[string]string
 )
 
 func Test_redis_timeWheel(t *testing.T) {
@@ -43,16 +50,20 @@ func Test_redis_timeWheel(t *testing.T) {
 
 	ctx := context.Background()
 	if err := rTimeWheel.AddTask(ctx, "test1", &RTaskElement{
-		CallbackURL: "http://localhost:8080/ping",
-		Method:      http.MethodPost,
+		CallbackURL: callbackURL,
+		Method:      callbackMethod,
+		Req:         callbackReq,
+		Header:      callbackHeader,
 	}, time.Now().Add(time.Second)); err != nil {
 		t.Error(err)
 		return
 	}
 
 	if err := rTimeWheel.AddTask(ctx, "test2", &RTaskElement{
-		CallbackURL: "http://localhost:8080/ping",
-		Method:      http.MethodPost,
+		CallbackURL: callbackURL,
+		Method:      callbackMethod,
+		Req:         callbackReq,
+		Header:      callbackHeader,
 	}, time.Now().Add(4*time.Second)); err != nil {
 		t.Error(err)
 		return
@@ -65,9 +76,4 @@ func Test_redis_timeWheel(t *testing.T) {
 
 	<-time.After(5 * time.Second)
 	t.Log("ok")
-}
-
-func Test_getTimeMinuteStr(t *testing.T) {
-	t.Error(util.GetTimeMinuteStr(time.Now()))
-
 }
