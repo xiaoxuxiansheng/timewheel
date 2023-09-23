@@ -16,7 +16,7 @@
 <a href="待补充">基于 golang 从零到一实现时间轮算法</a> <br/><br/>
 
 ## 🐧 使用示例
-使用单测示例代码如下. 参见 ./time_wheel_test.go 文件<br/><br/>
+使用单测示例代码如下. 参见 ./time_wheel_test.go 文件
 - 单机版时间轮<br/><br/>
 ```go
 func Test_timeWheel(t *testing.T) {
@@ -36,7 +36,7 @@ func Test_timeWheel(t *testing.T) {
 	<-time.After(6 * time.Second)
 }
 ```
-- redis版时间轮<br/><br/>
+- redis版时间轮
 ```go
 const (
 	// redis 服务器信息
